@@ -3,11 +3,11 @@ package main
 import (
 	"fmt"
 
-	querybuilder "github.com/sayeed1999/design-patterns-in-golang/builder-pattern/query-builder"
+	sqlquerybuilder "github.com/sayeed1999/design-patterns-in-golang/builder-pattern/sql-query-builder"
 )
 
 func main() {
-	queryBuilder := querybuilder.NewQueryBuilder()
+	queryBuilder := sqlquerybuilder.NewQueryBuilder()
 
 	query := queryBuilder.
 		Select("salary", "name").
