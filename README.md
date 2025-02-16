@@ -9,5 +9,6 @@ This repository will contain code examples of popularly used design patterns in 
 - [Bridge Pattern](bridge-pattern/README.md) // TODO
 - [Builder Pattern](builder-pattern/README.md)
 - [Composite Pattern](composite-pattern/README.md)
-- [Proxy Pattern (Nginx)](proxy-pattern-nginx/README.md)
+- [Proxy Pattern (Nginx Example)](proxy-pattern-nginx/README.md)
+- [Proxy Pattern (Lazy load image example)](proxy-pattern/README.md)
 - [Decorator Pattern](decorator-pattern/README.md)
