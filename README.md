@@ -5,8 +5,9 @@ This repository will contain code examples of popularly used design patterns in 
 ## Table of Contents
 
 - [Adapter Pattern](adapter-pattern/README.md)
-- [Facade Pattern](facade-pattern/README.md) // TODO
-- [Bridge Pattern](bridge-pattern/README.md) // TODO
+- [Observer Pattern](observer-pattern/README.md) // TODO
+- [Facade Pattern](facade-pattern/README.md)
+- [Bridge Pattern](bridge-pattern/README.md)
 - [Builder Pattern](builder-pattern/README.md)
 - [Composite Pattern](composite-pattern/README.md)
 - [Proxy Pattern (Nginx Example)](proxy-pattern-nginx/README.md)
