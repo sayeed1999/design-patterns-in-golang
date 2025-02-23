@@ -6,7 +6,9 @@ The Bridge Pattern is a structural design pattern that decouples an abstraction 
 
 ## Problem
 
-Imagine you have different types of computers (e.g., Mac and Windows) that need to print documents using different types of printers (e.g., HP and Epson). You want to be able to mix and match computers and printers without creating a complex and tightly coupled codebase.
+Imagine you have different types of computers (e.g., Mac and Windows) that need to print documents using different types of printers (e.g., HP and Epson).
+
+First you thought of this.. Creating two classes `EpsonPrinterForMac` and `HpPrinterForMac` and also two classes `EpsonPrinterForWindows` and `HpPrinterForWindows`. But this started to get messy with exponential growth (2*2) of classes.
 
 ## Solution
 
