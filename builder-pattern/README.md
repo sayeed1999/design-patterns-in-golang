@@ -41,3 +41,9 @@ query := NewSQLBuilder().
 fmt.Println(query) 
 // Output: SELECT id, name FROM users WHERE age > ? ORDER BY created_at DESC;
 ```
+
+## References
+
+Read my article on Medium on Builder Design Pattern: -
+
+- [Builder Design Pattern: Build your own ORM that generates SQL queries](https://medium.com/@sayeedrahman_67698/builder-design-pattern-build-your-custom-orm-that-generates-sql-queries-8cc7b7d94a9f)
