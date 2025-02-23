@@ -4,27 +4,32 @@ The Bridge Pattern is a structural design pattern that decouples an abstraction 
 
 **Note**: <i>At the end of this README.md file, I referenced the tutorial that I followed</i>
 
-## Key Concepts
+## Problem
 
-- **Abstraction**: Defines the interface for the control part of the two-class hierarchy. It maintains a reference to an object of type `Implementor`.
-- **Implementor**: Defines the interface for the implementation part of the two-class hierarchy. This interface doesn't need to correspond directly to the `Abstraction` interface and can be very different.
-- **Refined Abstraction**: Extends the interface defined by `Abstraction`.
-- **Concrete Implementor**: Implements the `Implementor` interface and defines its concrete implementation.
+Imagine you have different types of computers (e.g., Mac and Windows) that need to print documents using different types of printers (e.g., HP and Epson). You want to be able to mix and match computers and printers without creating a complex and tightly coupled codebase.
 
-## Example in This Repository
+## Solution
 
-In this example, we demonstrate the Bridge Pattern using a scenario where different types of computers (Mac and Windows) can use different types of printers (HP and Epson).
+The Bridge Pattern helps solve this problem by decoupling the abstraction (Computer) from its implementation (Printer). This allows you to extend both independently without affecting each other.
+
+## Approach
+
+1. **Define the Printer Interface**: This interface will have a method `PrintFile` that all concrete printers will implement.
+2. **Create Concrete Printers**: Implement the `Printer` interface for different printer types (e.g., HP and Epson).
+3. **Define the Computer Interface**: This interface will have methods to set a printer and print a document.
+4. **Create Concrete Computers**: Implement the `Computer` interface for different computer types (e.g., Mac and Windows).
+5. **Bridge the Abstraction and Implementation**: Use the `Computer` interface to set different `Printer` implementations and print documents.
 
 ### Structure
 
 - **Printer Interface**: Defines the `PrintFile` method.
   - [printer/printer.go](printer/printer.go)
-- **Concrete Implementors**: HP and Epson printers implementing the `Printer` interface.
+- **Concrete Printers**: HP and Epson printers implementing the `Printer` interface.
   - [printer/hp.go](printer/hp.go)
   - [printer/epson.go](printer/epson.go)
 - **Computer Interface**: Defines methods to set a printer and print.
   - [computer/computer.go](computer/computer.go)
-- **Refined Abstractions**: Mac and Windows computers implementing the `Computer` interface.
+- **Concrete Computers**: Mac and Windows computers implementing the `Computer` interface.
   - [computer/mac.go](computer/mac.go)
   - [computer/windows.go](computer/windows.go)
 
@@ -33,29 +38,6 @@ In this example, we demonstrate the Bridge Pattern using a scenario where differ
 The main function demonstrates how different computers can use different printers interchangeably.
 
 - [main.go](main.go)
-
-```go
-func main() {
-    epsonPrinter := &printer.EpsonPrinter{}
-    hpPrinter := &printer.HpPrinter{}
-
-    mac := &computer.Mac{}
-
-    mac.SetPrinter(epsonPrinter)
-    mac.Print()
-
-    mac.SetPrinter(hpPrinter)
-    mac.Print()
-
-    windows := &computer.Windows{}
-
-    windows.SetPrinter(epsonPrinter)
-    windows.Print()
-
-    windows.SetPrinter(hpPrinter)
-    windows.Print()
-}
-```
 
 ### Output
 
@@ -68,12 +50,12 @@ Printing file with a HP printer...
 
 ## Benefits
 
-- **Decoupling Abstraction and Implementation**: Allows both to vary independently.
-- **Increased Flexibility**: You can change or extend the abstraction and implementation hierarchies independently.
-- **Simplified Code Maintenance**: Changes in the implementation do not affect the client code.
+- Decoupling Abstraction and Implementation: Allows both to vary independently.
+- Increased Flexibility: You can change or extend the abstraction and implementation hierarchies independently.
+- Simplified Code Maintenance: Changes in the implementation do not affect the client code.
 
 ## Special Thanks
 
-- [Refactoring Guru: Bridge Pattern](https://refactoring.guru/design-patterns/bridge)
+[Refactoring Guru: Bridge Pattern](https://refactoring.guru/design-patterns/bridge)
 
-The example problem and solution at Refactoring Guru of RedCircle, RedSquare, BlueCircle, BlueSquare I found so great to learn! I recommend readers to check their tutorial for better learning!
+The example problem and solution at Refactoring Guru of `RedCircle`, `RedSquare`, `BlueCircle`, `BlueSquare` I found so great to learn! I recommend readers to check their tutorial for better learning!
