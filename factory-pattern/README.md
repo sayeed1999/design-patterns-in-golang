@@ -4,7 +4,7 @@ The Factory Pattern is a creational design pattern that provides an interface fo
 
 ## Problem
 
-Imagine you have a payment processing system that supports multiple payment methods (e.g., Debit Card, PayPal, Bank Transfer). You want to add support for new payment methods (e.g., Crypto) without modifying the existing codebase. Without a flexible design, adding new payment methods would require changes to the existing code, making it complex and difficult to maintain.
+Imagine you have a **payment processing system** that supports multiple payment methods **(e.g., Debit Card, PayPal, Bank Transfer)**. You want to add support for new payment methods **(e.g., Crypto)** without modifying the existing codebase. Without a flexible design, adding new payment methods would require changes to the existing code, making it complex and difficult to maintain.
 
 ## Solution
 
@@ -21,9 +21,9 @@ The Factory Pattern helps solve this problem by defining a factory method that c
 - **Product Interface**: Defines the methods that all concrete products will implement.
   - [payment/payment.go](payment/payment.go)
 - **Concrete Products**: Implement the `Product` interface for different payment methods.
-  - [payment/debit_card.go](payment/debit_card.go)
+  - [payment/debit_card.go](payment/debit-card.go)
   - [payment/paypal.go](payment/paypal.go)
-  - [payment/bank_transfer.go](payment/bank_transfer.go)
+  - [payment/bank_transfer.go](payment/bank-transfer.go)
   - [payment/crypto.go](payment/crypto.go) (to be implemented)
 - **Factory Method**: Returns the appropriate product based on input parameters.
   - [payment/factory.go](payment/factory.go)
@@ -40,7 +40,7 @@ The main function demonstrates how to use the `PaymentFactory` to process paymen
 - **Simplified Code Maintenance**: Keeps the client code clean and focused on its primary responsibilities.
 - **Scalability**: Easily extendable to include new products without changing the client code.
 
-## Refenrences
+## References
 
 Read my article on Medium on Factory Pattern: -
 
